@@ -1,2 +1,2 @@
-# fcc-js-algorithm-ds
-Study repository for JavaScript Algorithms and Data Sctructures Certification by freeCodeCamp.
+# FCC JavaSCript Algorithms and Data Structures
+Study repository for JavaScript Algorithms and Data Structures Certification by freeCodeCamp.
