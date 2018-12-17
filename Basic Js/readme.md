@@ -30,3 +30,15 @@ In Computer Science a queue is an abstract Data Structure where items are kept i
 Strict equality (===) is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion. If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
 
 The strict inequality operator (!==) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns false where strict equality would return true and vice versa. Strict inequality will not convert data types.
+
+### Statements
+If you have many options to choose from, use a switch statement. case values are tested with strict equality (===). In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found.
+
+If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered.
+
+### Object Oriented Programming
+Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+
+There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array. Dot notation is what you use when you know the name of the property you're trying to access ahead of time. If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+
+Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
