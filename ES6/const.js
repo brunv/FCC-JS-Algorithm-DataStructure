@@ -7,7 +7,7 @@
 "use strict";
 
 const s = [5, 10, 15];
-// s = [5, 10, 25];         // throws error, truing to assign a const
+// s = [5, 10, 25];         // throws error, trying to assign a const
 s[2] = 50;                  // works just as it would with an array declared with var or let
 
 console.log(s);             // returns [5, 10, 50]
