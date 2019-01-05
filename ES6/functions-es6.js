@@ -53,6 +53,7 @@ const maximum = Math.max(...array);         // returns 89;
 
 // However, the spread operator only works in-place, like in an argument to a
 // function or an array literal. The following code will not work:
-const spreaded = ...array;                  // will throw a syntax error
+
+//const spreaded = ...array;                  // will throw a syntax error
 const arrayCopy = [...array];               // will copy the array
 console.log(arrayCopy);
