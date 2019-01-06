@@ -50,3 +50,17 @@ myMathModule.subtract(5,3);
 // import * as obj_with_name_of_your_choice from "file_path_goes_here";
 // obj_with_name_of_your_choice.imported_function;
 
+
+/**
+ *  It is important to note that, to import a default export, you need to use
+ *  a different import syntax.
+ *  The syntax differs in one key place - the imported value, add, is not
+ *  surrounded by curly braces. Unlike exported valuse, the primary method of
+ *  importing a default export is to simply write value's name after import.
+ */
+
+// In the following example, we have a function, add, that is the default export
+// of a file, "math_functions". Here is how to import it:
+
+import add from "math_functions";
+add(5,4);   // will return 9
