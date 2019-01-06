@@ -28,3 +28,25 @@ import { countItems } from "math_array_functions"
  *  In most cases, the file path requires a './' before it; otherwise, node will
  *  look in node_modules directory first trying to load it as a dependency.
  */
+
+
+/**
+ *  Use * to import everything from a file:
+ *  Suppose you have a file that you wish to import all of its contents into the
+ *  current file. This can be done with the import * syntax.
+ *  You may use any name following the 'import * as' portion of the statement.
+ *  In order to utilize this method, it requires an object that receives the
+ *  imported balues. From here you will use dot notation to call imported values.
+ */
+
+// Here's an example where the contents of a file name "math_functions" are
+// imported into a file in the same directory:
+
+import * as myMathModule from "math_functions";
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+// And breaking down the code:
+// import * as obj_with_name_of_your_choice from "file_path_goes_here";
+// obj_with_name_of_your_choice.imported_function;
+
