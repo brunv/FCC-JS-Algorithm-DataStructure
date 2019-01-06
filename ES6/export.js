@@ -24,3 +24,19 @@ export const foo = "bar";       // How to export variables
 
 const foo = "bar";
 export { capitalizeString, foo };
+
+
+/**
+ *  There is another export syntax you need to know, known as export default.
+ *  Usually you will use this syntax if only one value is beign exported from a
+ *  file. It is also used to create a fallback value for a file or module.
+ *  Since export default is used to declare a fallback value for a module or a
+ *  file, you can only have one value be a default export in each module or
+ *  file. Additionally, you cannot use export default with var, let or const.
+ */
+
+// Here is a quick example of export default:
+
+export default function add(x, y) {
+    return x + y;
+}
