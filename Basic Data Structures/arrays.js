@@ -129,7 +129,7 @@ console.log(greetings);     // []
  *  any number of consecutive elements from anywhere in an array.
  *  
  *  splice() can take up to 3 parameters, but for now, we'll focus on just the
- *  first 2. The first two parameters of slice() are integers which represent
+ *  first 2. The first two parameters of splice() are integers which represent
  *  indexes, or positions, of the array that splice() is being called upon.
  *  splice()'s first parameter represents the index on the array from which to
  *  begin removing elements, while the second parameter indicates the number of
