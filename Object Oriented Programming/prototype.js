@@ -51,3 +51,52 @@ for (let property in duck) {
 
 console.log(ownProps);
 console.log(prototypeProps);
+
+
+/**
+ *  Change the prototype to a new object:
+ * 
+ *  Up until now you have been adding properties to the prototype individually.
+ *  This becomes tedious after more than a few properties. A more efficient way is
+ *  to set the prototype to a new object that already contains the properties.
+ *  This way, the properties are added all at once.
+ */
+
+// Bird.prototype.eat = function() {
+//     console.log("nom nom nom");
+// }
+  
+// Bird.prototype.describe = function() {
+//     console.log("My name is " + this.name);
+// }
+
+Bird.prototype = {
+    numLegs: 2,
+    eat: function() {
+        console.log("nom nom nom");
+    },
+    describe: function() {
+        console.log("My name is " + this.name);
+    }
+};
+
+
+/**
+ *  Remember to set the constructor property when changing the prototype:
+ * 
+ *  There is one crucial side effect of manually setting the prototype to a new
+ *  object. It erased the constructor property!!
+ *  To fix this, whenever a prototype is manually set to a new object, remeber to
+ *  define the constructor property.
+ */
+
+Bird.prototype = {
+    constructor: Bird,          // define the constructor property
+    numLegs: 2,
+    eat: function() {
+      console.log("nom nom nom");
+    },
+    describe: function() {
+      console.log("My name is " + this.name); 
+    }
+  };
