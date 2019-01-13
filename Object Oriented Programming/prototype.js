@@ -10,13 +10,13 @@
  */
 
 function Bird(name) {
-    this.name = name;
+    this.name = name;                   // own property
 }
 
 let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 
-Bird.prototype.numLegs = 3;
+Bird.prototype.numLegs = 3;             // protoype property
 
 console.log(duck.numLegs);
 console.log(canary.numLegs);
@@ -26,3 +26,28 @@ console.log(canary.numLegs);
  *  automatically have the properties on the prototype, think of a prototype as
  *  a "recipe" for creating objects.
  */
+
+
+/**
+ *  Iterate over all properties:
+ * 
+ *  You have now seen two kinds of properties: 'own' properties and 'prototype'
+ *  properties. Own properties are defined directly on the object intance itself.
+ *  And prototype properties are definedon the prototype.
+ *  Here's how you add duck's own properties to the arry ownProps and prototype
+ *  properties to the array prototypeProps:
+ */
+
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in duck) {
+    if (duck.hasOwnProperty(property)) {
+        ownProps.push(property);
+    } else {
+        prototypeProps.push(property);
+    }
+}
+
+console.log(ownProps);
+console.log(prototypeProps);
