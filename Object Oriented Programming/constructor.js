@@ -41,3 +41,39 @@ console.log(blueBird.numLegs);
 
 blueBird.name = 'Elvira';
 console.log(blueBird.name);
+
+
+/**
+ *  Extend constructors to receibe arguments:
+ * 
+ *  Notice thar all Birds that are created with Bird constructor are automatically
+ *  named Albert, are blue in color, and have two legs. It's possible to change the
+ *  properties of each bird manually but that would be a lot of work.
+ *  To more easily create different objects, you can design your constructor to
+ *  accept parameters.
+ */
+
+function Dog(name, race) {
+    this.name = name;
+    this.race = race;
+    this.numLegs = 4
+}
+
+let myDog = new Dog("Bruce", "Bulldog");
+
+console.log(myDog.name);
+console.log(myDog.race);
+
+
+/**
+ *  Verify an object's constructor with instanceof:
+ * 
+ *  Anytime a constructor function creates a new object, thar objects is said to be
+ *  an instace of its constructor. JavaScript gives a convenient way to verify this
+ *  with the 'instaceof' operator. This allows you to compare an objects to a
+ *  constructor, returning true of false based on whether or not that object was
+ *  created with the constructor.
+ */
+
+console.log(myDog instanceof Dog);
+console.log(blueBird instanceof Dog);
