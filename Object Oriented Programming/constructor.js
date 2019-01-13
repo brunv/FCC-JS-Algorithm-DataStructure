@@ -96,5 +96,3 @@ console.log(blueBird.constructor === Bird);     // true
  *  Since the constructor property can be overwritten (which we'll see later) it's
  *  generally better to use the 'instanceof' method to check the type of an object.
  */
-
-
