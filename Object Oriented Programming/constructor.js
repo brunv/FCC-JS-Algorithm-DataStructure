@@ -75,5 +75,26 @@ console.log(myDog.race);
  *  created with the constructor.
  */
 
-console.log(myDog instanceof Dog);
-console.log(blueBird instanceof Dog);
+console.log(myDog instanceof Dog);              // true
+console.log(blueBird instanceof Dog);           // false
+
+
+/**
+ *  Understand the constructor property:
+ * 
+ *  There is a special constructor property located on the objects intances that
+ *  were created previously. Note that the constructor property is a reference to
+ *  the constructor function that created the instance.
+ *  The advantage of the constructor property is that it's possible to check for
+ *  this property to find what kind of object is is.
+ */
+
+console.log(myDog.constructor === Dog);         // true
+console.log(blueBird.constructor === Bird);     // true
+
+/**
+ *  Since the constructor property can be overwritten (which we'll see later) it's
+ *  generally better to use the 'instanceof' method to check the type of an object.
+ */
+
+
