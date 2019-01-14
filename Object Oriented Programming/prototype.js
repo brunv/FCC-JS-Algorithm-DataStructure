@@ -116,3 +116,35 @@ function Dog(name) {
   
 let beagle = new Dog("Snoopy");
 console.log(Dog.prototype.isPrototypeOf(beagle));       // true
+
+
+/**
+ *  Understand the protype chain
+ * 
+ *  All objects in JavaScript (with a few exceptions) have a prototype. Also, an
+ *  object's prototype irself is an object.
+ *  Because a prototype is an object, a prototype can have its own prototype! In
+ *  this case, the prototype of Frog.prototype is Object.prototype.
+ */
+
+function Frog(name) {
+    this.name = name;
+}
+
+console.log(typeof Frog.prototype);         // object
+
+/**
+ *  How is this useful? You may recall the 'hasOwnProprety' method. This method is
+ *  defined in Object.prototype, which can be accessed by Frog.prototype, which can
+ *  be accessed by 'donald'. This is an example of the prototype chain.
+ */
+
+let donald = new Frog("Donald");
+donald.hasOwnProperty("name");              // true
+
+/**
+ *  In this prototype chain, Frog is the 'supertype' for donald, while donald is
+ *  the 'subtype'. Objects is a supertype for both Frog and donald.
+ *  Object is a supertype for all objects in JavaScript. Therefore, any object can
+ *  use the 'hasOwnProperty' method.
+ */
