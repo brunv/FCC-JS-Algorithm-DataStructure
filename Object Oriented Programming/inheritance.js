@@ -160,3 +160,34 @@ Bird.prototype.fly = function() {
 let duck = new Bird();
 duck.eat();
 duck.fly();
+
+
+/**
+ *  Override inheited methods:
+ * 
+ *  In previous sections, we learned that an object can inherit its behavior from
+ *  another object by closing its prototype object:
+ * 
+ *  ChildObject.prototype = Object.create(ParentObject.prototype);
+ * 
+ *  The the ChildObject received its own methods by chaining them onto its
+ *  prototype:
+ * 
+ *  ChildObject.prototype.methodName = function() {...};
+ * 
+ *  It's possible to override an inherited method. It's done the same way - by
+ *  adding a method to ChildObject.prototype using the same method name as the
+ *  one to override.
+ */
+
+// Here's an example of Bird overriding the eat() method inherited from Animal:
+
+function Animal() { }
+Animal.prototype.eat = function() {
+    return "nom nom nom";
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);   // inherit all methods
+Bird.prototype.eat = function() {                   // overrides Animal.eat()
+    return "peck peck peck";
+};
