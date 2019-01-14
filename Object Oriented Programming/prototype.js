@@ -100,3 +100,19 @@ Bird.prototype = {
       console.log("My name is " + this.name); 
     }
   };
+
+
+/**
+ *  Understand where an object's prototype comes from:
+ * 
+ *  Just like people inherit genes from their parents, an object inherits its
+ *  prototype directly from constructor function that created it. You can show this
+ *  relationship with the 'isPrototypeOf' method:
+ */
+
+function Dog(name) {
+    this.name = name;
+}
+  
+let beagle = new Dog("Snoopy");
+console.log(Dog.prototype.isPrototypeOf(beagle));       // true
