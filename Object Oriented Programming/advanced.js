@@ -92,3 +92,51 @@ console.log(ducky.getHatchedEggCount());     // 10
 (function () {
     console.log("Chirp, chirp!");
 })();   //this is an anonymous function
+
+
+/**
+ *  Use an IIFE to create a Module:
+ * 
+ *  An immediately invoked function expression is often used to group related
+ *  functionality into a single object or module.
+ * 
+ *  Note that you have an IIFE that return an object 'motionModule'. This returned
+ *  object contains all of the mixin behavior as properties of the object.
+ * 
+ *  The advantage of the module pattern is that all the motion behaviors can be
+ *  packaged into a single object that can then be used by other parts of your
+ *  code.
+ */
+
+// For example, we previously defined two mixins:
+
+function glideMixin(obj) {
+    obj.glide = function() {
+        console.log("Gliding on the water");
+    };
+}
+function flyMixin(obj) {
+    obj.fly = function() {
+      console.log("Flying, wooosh!");
+    };
+}
+
+// We can group this mixins into a module as follows:
+
+let motionModule = (function () {
+    return {
+        glideMixin: function (obj) {
+            obj.glide = function() {
+                console.log("Gliding on the water!");
+            };
+        },
+        flyMixin: function (obj) {
+            obj.fly = function() {
+                console.log("I believe I can fly!");
+            };
+        }
+    }
+}) ();      // these two parentheses cause the function to be immediately invoked!
+
+motionModule.glideMixin(duck);
+duck.glide();
