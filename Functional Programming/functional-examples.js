@@ -209,3 +209,32 @@ var filteredList = watchList.map( function(e) {
 }).filter((e) => e.rating >= 8);
 
 console.log(filteredList);
+
+
+/**
+ *  Implement 'filter()' method on a Prototype:
+ * 
+ *  It would teach us a lot about the 'filter' method if we try to implement a
+ *  version of it that behaves exactly like Array.prototype.filter(). It can use
+ *  either 'for loop' or Array.prototype.forEach().
+ */
+
+var s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback) {
+    var newArray = [];
+
+    this.forEach(function(x) {
+        if (callback(x) == true) {
+            newArray.push(x);
+        }
+    });
+
+    return newArray;
+};
+
+var new_s = s.myFilter(function(item) {
+    return item % 2 == 0;
+});
+
+console.log(new_s);
