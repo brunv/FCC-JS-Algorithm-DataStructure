@@ -59,3 +59,39 @@ function incrementer(initialValue) {
 var newValue = incrementer(fixedValue); // should be equal 5
 console.log(newValue);
 console.log(fixedValue);                // should print 4
+
+
+/**
+ *  Refactor Gloval Variables out of Functions:
+ * 
+ *  So far, we have seen two distinct principles for functional programming:
+ *  1) Don't alter a variable or object - create new variables and objects and
+ *  return them if need be from a function.
+ *  2) Declare function arguments - any computation inside a function depends only
+ *  on the arguments, and not on any global object or variable.
+ * 
+ *  Adding one to a number is not very exciting, but we can apply these principles
+ *  when working with arrays or more complex objects.
+ */
+
+// the global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+// This function should add a book to the list and return the list
+function add (bookList, bookName) {
+    return [...bookList, bookName];  
+}
+
+// This function should remove a book from the list and return the list
+function remove (bookList, bookName) {
+    let list = [...bookList];
+    if (list.indexOf(bookName) >= 0) {
+    return list.filter((item) => item !== bookName);
+    }
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+
+console.log(bookList);
