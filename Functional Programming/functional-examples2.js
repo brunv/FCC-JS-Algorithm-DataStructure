@@ -221,3 +221,58 @@ var averageRating = watchList
     .reduce((x1, x2) => x1 + x2) / watchList.filter( x => x.Director === "Christopher Nolan").length;
 
 console.log(averageRating); 
+
+
+/**
+ *  Sort an array alphabetically using the 'sort' method:
+ * 
+ *  The 'sort' method sorts the elements of an array according to the callback
+ *  funciton.
+ * 
+ *  Note: It's encouraged to provide a callback function to specify how to sort the
+ *  array items. JavaScript's default sorting method is by string Unicode point,
+ *  value, which may return unexpected results.
+ */
+
+function ascendingOrder(arr) {
+    return arr.sort(function(a, b) {
+        return a - b;
+    });
+}
+console.log(ascendingOrder([1, 5, 3, 8, 5, 4, 2]));
+
+function reverseAlpha(arr) {
+    return arr.sort(function(a, b) {
+        return a < b;
+    });
+}
+console.log(reverseAlpha(['l', 'h', 'z', 'b', 's']));
+
+function alphabeticalOrder(arr) {
+    return arr.sort(function(a, b) {
+        return a > b;
+    });
+}
+console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"]));
+
+
+/**
+ *  Return a sorted array without changing the original array:
+ * 
+ *  A side effect of the 'sort' method is that it changes the order of the elements
+ *  in the original array. In other words, it mutates the array in place. One way
+ *  to avoid this is to first concatenate an empty array to the one being sorted
+ *  (remeber that 'concat' returns a new array), then run 'sort' method.
+ */
+
+var globalArray = [5, 6, 3, 2, 9];
+
+function nonMutatingSort(arr) {
+    var newArray = [];
+    return newArray.concat(arr).sort(function(a, b) {
+        return a - b;
+    });
+}
+
+console.log(nonMutatingSort(globalArray));
+console.log(globalArray);
