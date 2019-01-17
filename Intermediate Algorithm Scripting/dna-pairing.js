@@ -90,5 +90,5 @@ function pairElement(str) {
 
     // use the map function to map each character in the array to an array with
     // the character and it's matching pair, creating a 2D array.
-    return arr.map(x => [x.pairs[x]]);
+    return arr.map(x => [x, pairs[x]]);
 }
