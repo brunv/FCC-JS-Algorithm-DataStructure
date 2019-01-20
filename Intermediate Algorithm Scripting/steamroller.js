@@ -29,7 +29,7 @@ function steamrollArray(arr) {
     return flattenedArray;
   }
 
-console.log(steamrollerArray([9, [1, 2], [3, 4]]));
+console.log(steamrollerArray([9, [1, 2], [3, [6,7], 4]]));
 
 
 /**
@@ -41,9 +41,10 @@ console.log(steamrollerArray([9, [1, 2], [3, 4]]));
  *  new array to repeat the process.
  */
 
-function steamrollArray(arr) {
+function steamrollerArray(arr) {
     let flat = [].concat(...arr);
-    return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
+    console.log(flat);
+    return flat.some(Array.isArray) ? steamrollerArray(flat) : flat;
 }
 
 
