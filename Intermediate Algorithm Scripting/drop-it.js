@@ -32,7 +32,7 @@ console.log(dropElements([1,2,3,7,1], function(n) {return n > 3;}));
  *  Intermediate code solution:
  * 
  *  Using the ES6 'findIndex()' function to find the index of the element that
- *  passes the condition. Slice the foind index until the end.
+ *  passes the condition. Slice the found index until the end.
  */
 
 function dropElements(arr, func) {
