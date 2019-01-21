@@ -17,10 +17,10 @@ var convertToRoman = function(num) {
     var romanized = '';
   
     for (var index = 0; index < decimalValue.length; index++) {
-      while (decimalValue[index] <= num) {
-        romanized += romanNumeral[index];
-        num -= decimalValue[index];
-      }
+        while (decimalValue[index] <= num) {
+            romanized += romanNumeral[index];
+            num -= decimalValue[index];
+        }
     }
   
     return romanized;
